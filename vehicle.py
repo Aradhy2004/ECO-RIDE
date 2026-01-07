@@ -1,4 +1,5 @@
-class Vehicle:
+from abc import ABC, abstractmethod
+class vehicle(ABC):
     """
     Represents a vehicle in the Eco-Ride fleet
     """
@@ -37,6 +38,15 @@ class Vehicle:
             self.__rental_price = price
         else:
             raise ValueError("Rental price cannot be negative")
+        
+    @abstractmethod
+    def calculate_trip_cost(self,value):
+        """
+        calculate trip cost based on distance and time
+        Must be implemented by all subclasses
+        """
+        pass
+
 
         
         
